@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs/blocks'
+import { Button } from '../src/blocks/'
+
+<Meta title="Studybook/Getting Started" />
+
+# Welcome to Studybook
+
+Studybook augments your Storybook UI with controls to track progress as if it's a learning aid. The confetti is free!
+It does this by keeping track of which stories are completed in `localStorage`.
+
+## Install Studybook
+
+Let's start off light with your first study lesson.
+
+This means installing `Studybook`.
+
+<Story name="Install" parameters={{ viewMode: 'docs' }}>
+  <Source
+    code="
+    yarn add storybook-addon-studybook
+  "
+    dark
+  />
+</Story>
+
+Got this far? Cool. Hit this button 👇
+
+<Button name="Install" />
+
+You completed your first study lesson. Notice how the badge at the top changed?
+
+## Set Up
+
+Now we've installed `Studybook`, let's use it in a Storybook. Update the `addons` within `.storybook/main.js`.
+
+<Story name="Integrate" parameters={{ viewMode: 'docs' }}>
+  <Source
+    code="
+module.exports = {
+  stories: [...],
+  addons: [
+    '...'
+    'storybook-addon-studybook'
+  ] }
+  "
+    dark
+    format
+  />
+</Story>
+
+You know what to do! 👇
+
+<Button name="Integrate" />
+
+## Panels and Badges
+
+By now you should've noticed the additional pieces of UI floating about.
+When viewing the Canvas for a story, you have a new tab, "Study". That contains a button that allows you
+to toggle whether a story has been completed. You don't need to do anything to make this appear.
+It will appear on all stories by **default**.
+
+You may have also noticed that badge at the top. This will appear in both the "Canvas" and "Docs" tabs. It will either show the current progress for a story or what we like to call, a "Chapter". A "Chapter" is a collection of stories.
+If you've been following along, when you hit this button, we should have 3/4 stories complete.
+
+<Story name="Panels and Badges" parameters={{ viewMode: 'docs' }}></Story>
+
+<Button name="Panels and Badges" />
+
+## Docs Button
+
+These "Complete" buttons you've been pressing are also a component you can use in your Storybook docs. There's one caveat.
+They must have a `name` prop that matches the story they are toggling. Being able to toggle multiple stories is WIP.
+
+For example, to create a button that toggles the first lesson we would do the following.
+
+<Story name="Docs Button" parameters={{ viewMode: 'docs' }}>
+  <Source
+    format
+    code="
+import { Button } from 'storybook-addon-studybook/blocks'
+<Button name='Install'/>
+  "
+    dark
+  />
+</Story>
+
+That gives us something like this. Hit this to toggle completing the first lesson.
+
+<Canvas>
+  <Button name="Install" />
+</Canvas>
+
+And that's the "Docs Button" 🎉 You know what to do.
+
+<Button name="Docs Button" />
+
+## That's It!
+
+Awesome! You made it! That's where `Studybook` is at for the moment. It's a proof of concept.
+But, it could be easily extended and moulded to will.
+
+Hit that last button. You learned about Studybook!
+
+<Story name="Complete" parameters={{ viewMode: 'docs' }}></Story>
+
+<Button name="Complete" />

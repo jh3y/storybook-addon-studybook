@@ -1,0 +1,60 @@
+{
+  "name": "storybook-addon-studybook",
+  "version": "0.0.1",
+  "description": "A Storybook addon for using Storybook as a learning aid",
+  "main": "dist/preset.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "storydocs": "start-storybook --docs --no-manager-cache -p 6006",
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jh3y/storybook-addon-studybook.git"
+  },
+  "storybook": {
+    "displayName": "Studybook"
+  },
+  "keywords": [
+    "storybook",
+    "storybook-addons",
+    "studybook",
+    "whimsy",
+    "addons"
+  ],
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "author": "jh3y <jh3y@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jh3y/storybook-addon-studybook/issues"
+  },
+  "homepage": "https://github.com/jh3y/storybook-addon-studybook#readme",
+  "dependencies": {
+    "@storybook/addons": "^6.0.0",
+    "canvas-confetti": "^1.4.0",
+    "styled-components": "^5.2.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.13",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "@storybook/theming": "^6.2.1",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

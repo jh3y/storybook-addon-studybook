@@ -1,0 +1,7 @@
+dist
+*.tgz
+node_modules
+storybook-static
+
+# Local Netlify folder
+.netlify
