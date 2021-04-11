@@ -21,9 +21,12 @@ const CompleteButton = ({ name }) => {
   const context = useContext(DocsContext)
   const buttonRef = useRef(null)
 
+  console.info(name, id, context.storyStore._stories)
+
   const id = Object.entries(context.storyStore._stories).filter(
     ([, story]) => story.kind === context.kind && story.name === name
   )[0][0]
+
 
   const [complete, setComplete] = useState(isComplete(id))
 
