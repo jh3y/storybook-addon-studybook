@@ -5,3 +5,5 @@ storybook-static
 
 # Local Netlify folder
 .netlify
+
+build-storybook.log

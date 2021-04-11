@@ -1,6 +1,5 @@
-import React, { Fragment, useContext, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { Badge, Separator } from '@storybook/components'
-import { DocsContext } from '@storybook/addon-docs/blocks'
 import { useChannel, useAddonState, useStorybookState } from '@storybook/api'
 import { CONSTANTS, INITIAL_STATE } from '../constants'
 const { ADDON_ID } = CONSTANTS

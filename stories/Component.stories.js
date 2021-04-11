@@ -21,7 +21,9 @@ Intro.parameters = {
   },
 }
 
-export const DefaultButton = () => <button>Learning about this Button</button>
+export const DefaultButton = () => (
+  <button style={{ fontWeight: 'bold' }}>Learning about this Button</button>
+)
 DefaultButton.parameters = {
   docs: {
     page: buttonDocs,

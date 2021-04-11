@@ -15,7 +15,7 @@ const isComplete = (id) => {
 const CompleteButton = ({ name }) => {
   if (!name)
     throw Error(
-      'addon-studybook: No "name" prop provided for complete button'
+      `${CONSTANTS.ADDON_ID}: No "name" prop provided for complete button`
     )
 
   const context = useContext(DocsContext)
@@ -25,7 +25,7 @@ const CompleteButton = ({ name }) => {
     ([, story]) => story.kind === context.kind && story.name === name
   )[0]
 
-  if (!story) throw Error(`addon-studybook: No story exists with the name ${name}`)
+  if (!story) throw Error(`${CONSTANTS.ADDON_ID}: No story exists with the name ${name}`)
 
   const id = story[0]
 

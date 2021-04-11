@@ -3,9 +3,9 @@ const DEFAULT_STATE = {
 }
 
 export const CONSTANTS = {
-  ADDON_ID: 'course-complete',
-  PANEL_ID: 'course-complete/panel',
-  TOOLBAR_ID: 'course-complete/toolbar',
+  ADDON_ID: 'studybook',
+  PANEL_ID: 'studybook/panel',
+  TOOLBAR_ID: 'studybook/toolbar',
   COMPLETE: 'Study',
   INCOMPLETE: 'Complete',
   STUDYING: 'Studying',
