@@ -22,7 +22,7 @@ Intro.parameters = {
 }
 
 export const DefaultButton = () => (
-  <button style={{ fontWeight: 'bold' }}>Learning about this Button</button>
+  <button style={{ fontWeight: 'normal' }}>Learning about this Button</button>
 )
 DefaultButton.parameters = {
   docs: {
