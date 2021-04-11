@@ -21,8 +21,6 @@ const CompleteButton = ({ name }) => {
   const context = useContext(DocsContext)
   const buttonRef = useRef(null)
 
-  console.info(name, id, context.storyStore._stories)
-
   const story = Object.entries(context.storyStore._stories).filter(
     ([, story]) => story.kind === context.kind && story.name === name
   )[0]

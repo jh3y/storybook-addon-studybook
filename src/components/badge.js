@@ -1,5 +1,6 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useRef, useState } from 'react'
 import { Badge, Separator } from '@storybook/components'
+import { DocsContext } from '@storybook/addon-docs/blocks'
 import { useChannel, useAddonState, useStorybookState } from '@storybook/api'
 import { CONSTANTS, INITIAL_STATE } from '../constants'
 const { ADDON_ID } = CONSTANTS
@@ -47,11 +48,31 @@ const ProgressBadge = () => {
     }
   }, [doc, globalState])
 
-  if (storiesRef.current.length <= 1 && globalState.storyId && globalState.storyId.endsWith('--page')) return null
+  if (
+    storiesRef.current.length <= 1 &&
+    globalState.storyId &&
+    globalState.storyId.endsWith('--page')
+  )
+    return null
 
   return (
     <Fragment>
       <Separator />
+      {/* Show the badge for the current story */}
+      {globalState.storiesConfigured && (
+        <Badge
+          status={
+            completion.completed.indexOf(globalState.storyId) !== -1
+              ? 'positive'
+              : 'neutral'
+          }>
+          <span>{`${
+            completion.completed.indexOf(globalState.storyId) !== -1
+              ? 'Completed'
+              : 'Studying'
+          }: ${globalState.storiesHash[globalState.storyId].name}`}</span>
+        </Badge>
+      )}
       {story && (
         <Badge status={complete ? 'positive' : 'neutral'}>
           {complete ? CONSTANTS.BADGE_COMPLETE : CONSTANTS.STUDYING}
