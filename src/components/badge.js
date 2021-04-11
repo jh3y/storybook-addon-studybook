@@ -58,20 +58,22 @@ const ProgressBadge = () => {
     <Fragment>
       <Separator />
       {/* Show the badge for the current story */}
-      {globalState.storiesConfigured && (
-        <Badge
-          status={
-            completion.completed.indexOf(globalState.storyId) !== -1
-              ? 'positive'
-              : 'neutral'
-          }>
-          <span>{`${
-            completion.completed.indexOf(globalState.storyId) !== -1
-              ? 'Completed'
-              : 'Studying'
-          }: ${globalState.storiesHash[globalState.storyId].name}`}</span>
-        </Badge>
-      )}
+      {globalState.storiesConfigured &&
+        globalState.storyId &&
+        globalState.storiesHash[globalState.storyId] && (
+          <Badge
+            status={
+              completion.completed.indexOf(globalState.storyId) !== -1
+                ? 'positive'
+                : 'neutral'
+            }>
+            <span>{`${
+              completion.completed.indexOf(globalState.storyId) !== -1
+                ? 'Completed'
+                : 'Studying'
+            }: ${globalState.storiesHash[globalState.storyId].name}`}</span>
+          </Badge>
+        )}
       {story && (
         <Badge status={complete ? 'positive' : 'neutral'}>
           {complete ? CONSTANTS.BADGE_COMPLETE : CONSTANTS.STUDYING}
